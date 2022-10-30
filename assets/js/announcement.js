@@ -17,7 +17,7 @@ window.addEventListener("pageshow", async () => {
     
     txts.forEach(txt => {
         if (index2 > 4) return;
-        txt.innerHTML = infoArr[index2].content;
+        txt.innerHTML = infoArr[index2].cleanContent;
         index2++;
     });
 })
