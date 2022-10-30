@@ -3,6 +3,7 @@ const txts = document.querySelectorAll(".card-text");
 
 window.addEventListener("pageshow", async () => {
     const raw = await fetch("https://naynaypi.is-not-a.dev/api/announcements");
+    if (!raw.status.ok) document.location.reload();
     const infoArr = await raw.json();
     let index1 = 0;
     let index2 = 0;
