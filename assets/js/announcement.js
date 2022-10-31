@@ -5,13 +5,13 @@ const ann = document.querySelector("#annOpen");
 const text = 
 
 window.addEventListener("pageshow", async () => {
+    const raw = await fetch("https://naynaypi.is-not-a.dev/api/announcements");
+    if (!raw.ok) window.location.reload();
     setTimeout(() => {
       loading.style.display = "none";
       ann.style.display = "block";
-    }, 5000);
+    }, 3000);
     
-    const raw = await fetch("https://naynaypi.is-not-a.dev/api/announcements");
-    if (!raw.ok) window.location.reload();
     const infoArr = await raw.json();
     let index1 = 0;
     let index2 = 0;
