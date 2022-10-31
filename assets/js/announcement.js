@@ -8,7 +8,7 @@ window.addEventListener("pageshow", async () => {
     setTimeout(() => {
       loading.style.display = "none";
       ann.style.display = "block";
-    }, 3000);
+    }, 5000);
     
     const raw = await fetch("https://naynaypi.is-not-a.dev/api/announcements");
     if (!raw.ok) document.location.reload();
