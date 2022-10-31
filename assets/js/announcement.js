@@ -8,7 +8,11 @@ window.addEventListener("pageshow", async () => {
     if (!raw.ok) history.go(0);
     setTimeout(() => {
       loading.style.display = "none";
-      ann.style.display = "block";
+      loading.classList.remove("d-md-flex");
+      loading.classList.add("d-md-none");
+      ann.style.display = "flex";
+      ann.classList.remove("d-md-none");
+      ann.classList.add("d-md-flex");
     }, 3000);
     
     const infoArr = await raw.json();
