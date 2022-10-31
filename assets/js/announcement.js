@@ -5,7 +5,7 @@ const ann = document.querySelector("#annOpen");
 
 window.addEventListener("pageshow", async () => {
     const raw = await fetch("https://naynaypi.is-not-a.dev/api/announcements");
-    if (!raw.ok) document.location.reload();
+    if (!raw.ok) history.go(0);
     setTimeout(() => {
       loading.style.display = "none";
       ann.style.display = "block";
