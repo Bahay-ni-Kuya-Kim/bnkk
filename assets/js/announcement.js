@@ -2,11 +2,10 @@ const dates = document.querySelectorAll(".card-subtitle");
 const txts = document.querySelectorAll(".card-text");
 const loading = document.querySelector("#annClose");
 const ann = document.querySelector("#annOpen");
-const text = 
 
 window.addEventListener("pageshow", async () => {
     const raw = await fetch("https://naynaypi.is-not-a.dev/api/announcements");
-    if (!raw.ok) window.location.reload();
+    if (!raw.ok) document.location.reload();
     setTimeout(() => {
       loading.style.display = "none";
       ann.style.display = "block";
@@ -18,7 +17,6 @@ window.addEventListener("pageshow", async () => {
     
     dates.forEach(date => {
         if (index1 > 4) return;
-        if (date.innerHTML === " ") window.location.reload();
         let created = new Date(infoArr[index1].createdTimestamp);
         date.innerHTML = created.toDateString().substr(4);
         index1++;
